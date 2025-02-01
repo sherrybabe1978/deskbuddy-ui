@@ -1,0 +1,231 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+}
+
+.digital-web {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, rgba(255, 182, 193, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 182, 193, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.digital-web::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(45deg, 
+      rgba(255, 182, 193, 0.03) 0px, 
+      rgba(255, 182, 193, 0.03) 1px,
+      transparent 1px, 
+      transparent 40px
+    ),
+    repeating-linear-gradient(-45deg, 
+      rgba(65, 105, 225, 0.03) 0px, 
+      rgba(65, 105, 225, 0.03) 1px,
+      transparent 1px, 
+      transparent 40px
+    );
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.nav-button:hover {
+  background: #ffb6c1;
+  color: black;
+  border-color: #ffb6c1;
+  box-shadow: 0 0 5px #ffb6c1,
+              0 0 10px #ffb6c1;
+}
+
+.nav-button.active {
+  background: #ffb6c1;
+  color: black;
+  border-color: #ffb6c1;
+  box-shadow: 0 0 5px #ffb6c1,
+              0 0 10px #ffb6c1;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+.tagline {
+  max-width: 500px;
+}
+
+.tagline h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.tagline p {
+  font-size: 24px;
+  line-height: 1.5;
+  color: #888;
+}
+
+.bento-box {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  width: 500px;
+  height: 400px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.1);
+}
+
+.bento-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bento-item.large {
+  grid-column: span 2;
+}
+
+.bento-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.bento-item p {
+  font-size: 16px;
+  color: #888;
+}
+
+.learn-more {
+  background: transparent;
+  color: #ffb6c1;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15px 30px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.learn-more:hover {
+  background: #ffb6c1;
+  color: black;
+  border-color: #ffb6c1;
+  box-shadow: 0 0 5px #ffb6c1,
+              0 0 10px #ffb6c1;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .tagline {
+    margin-bottom: 40px;
+  }
+
+  .bento-box {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tagline h1 {
+    font-size: 36px;
+  }
+
+  .tagline p {
+    font-size: 20px;
+  }
+}
